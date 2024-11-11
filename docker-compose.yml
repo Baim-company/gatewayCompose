@@ -1,8 +1,6 @@
 networks:
   default:
-    driver: bridge
-  gateway-network:
-    driver: bridge
+    driver: bridge 
 
 
 services: 
@@ -21,25 +19,25 @@ services:
       - marketing.api
       - personalaccount.api
     networks:
-      - gateway-network
+      - default
 
 
   identity.api:
     image: aykhan151618/baim.ms-identity
     networks:
-      - gateway-network
+      - default
 
   vacancy.api:
     image: aykhan151618/baim.ms-vacancies
     networks:
-      - gateway-network
+      - default
 
   marketing.api:
     image: aykhan151618/baim.ms-marketing
     networks:
-      - gateway-network
+      - default
 
   personalaccount.api:
     image: aykhan151618/baim.ms-account
     networks:
-      - gateway-network
+      - default
